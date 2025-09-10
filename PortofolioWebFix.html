@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: #121212;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #00adb5;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00adb5;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+
+            background: url('Gemini_Generated_Image_30w2k830w2k830w2.png') no-repeat center center/cover;
+            background-size: 70%;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6); /* overlay */
+            z-index: 0;
+        }
+
+        .hero h2,
+        .hero p,
+        .hero .btn {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            background: #00adb5;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #019ca2;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #00adb5;
+        }
+
+        .about p {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            color: #ccc;
+        }
+
+        /* Portfolio */
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #bbb;
+        }
+
+        /* Contact */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #00adb5;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #121212;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #121212;
+                width: 200px;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>MyPortfolio</h1>
+    <div class="menu-toggle">☰</div>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Hello, I'm <span style="color:#00adb5;">Raihan Fikri Ramadhan</span></h2>
+    <p>M0403241036 | Computer Science | Proxy Fisher</p>
+    <a href="#portfolio" class="btn">View My Work</a>
+</section>
+
+<section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate developer creating modern and responsive websites. With a strong foundation in web technologies, I love to design sleek user interfaces and seamless user experiences.</p>
+</section>
+
+<section class="portfolio" id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-container">
+        <div class="card">
+            <h3>National Science Olympiad (OSN) Informatics in Subang Regency</h3>
+            <p>Achieved 1st Place (2023) and 5th Place (2022) at the regency-level National Science Olympiad (OSN) Informatics, showcasing skills in algorithms, programming, and problem-solving.</p>
+        </div>
+        <div class="card">
+            <h3>ALFEST (Al Syifa Festival) – Media Team</h3>
+            <p>Contributed as part of the media team at ALFEST, an annual student festival at As-Syifa Boarding School. Responsible for creating and managing event documentation, visual content, and promotions, helping to showcase the festival to a wide audience.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <div class="social-links">
+        <a href="https://www.instagram.com/raihanfr20/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/raihan-fikri-ramadhan-129924323/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Raihan Fikri Ramadhan. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Toggle menu for mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('show');
+    });
+</script>
+</body>
+</html>
